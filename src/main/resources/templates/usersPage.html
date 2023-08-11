@@ -29,7 +29,10 @@
         <td th:text="${user.name}"></td>
         <td th:text="${user.yearOfBirth}"></td>
         <td><a th:href="@{/edit/{id}(id=${user.id})}">edit</a>
-        <td><a th:href="@{/delete/{id}(id=${user.id})}">delete</a>
+        <td><form th:action="@{/delete/{id}(id=${user.id})}" method="post">
+        <input type="hidden" name="_method" value="delete" />
+        <input type="submit" value="Delete" />
+    </form></td>
 
     </tr>
     </tbody>
