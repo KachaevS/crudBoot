@@ -12,10 +12,11 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
 
-    private static userDao userDao;
+    private final userDao userDao;
+
     @Autowired
     public UserServiceImpl(userDao userDao) {
-        UserServiceImpl.userDao = userDao;
+        this.userDao = userDao;
     }
 
     @Override
